@@ -3,13 +3,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import SIgn_img from "./SIgn_img";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 
-const Home = () => {
-    let history  = useNavigate();
+const Home = React.memo(() => {
+  //console.log("1213414141414254132452325432154321535");
+  let navigate = useNavigate();
   const [inpval, setInpval] = useState({
     name: "",
     email: "",
@@ -17,16 +18,22 @@ const Home = () => {
     password: "",
   });
 
-const [data, setData] = useState([]);
+  // var data = [];
+  const [data, setData] = useState([]);
+  localStorage.setItem("useryoutube", JSON.stringify(data)); 
+  // const saveData = () => {
+  // }
+  // console.log("dat123", data);
 
 
+  // data && data.map((item) => {
+  //   console.log("item",item);
+  //   //  localStorage.setItem("useryoutube", JSON.stringify(item));  
+  // })
 
-
-
-
-  useEffect(() => {
-    localStorage.setItem("useryoutube", JSON.stringify(data));
-  }, [data]);
+  // localStorage.setItem("useryoutube", JSON.stringify(data));
+  // useEffect(() => {
+  // }, [data]);
 
   const getdataChange = (e) => {
     const { value, name } = e.target;
@@ -58,11 +65,15 @@ const [data, setData] = useState([]);
       toast.error("password length greater five", {
         position: "top-center",
       });
-    } else if (data) {
+    } else {
       console.log("data added succesfully");
-       setData([...data, inpval]);
-      
-     history("/login")
+      setData([...data, inpval]);
+      // data.push([...data, inpval])
+      // saveData();
+      setTimeout(() => {
+        navigate("/login", { state: inpval });
+      }, 1000);
+      // history("/login");
     }
   };
 
@@ -122,7 +133,7 @@ const [data, setData] = useState([]);
               >
                 Submit
               </Button>
-            </Form> 
+            </Form>
             <p className="mt-3">
               Already Have an Account{" "}
               <span>
@@ -134,11 +145,8 @@ const [data, setData] = useState([]);
         </section>
         <ToastContainer />
       </div>
-
-
-     
     </>
   );
-};
+});
 
 export default Home;

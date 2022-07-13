@@ -6,15 +6,16 @@ import Login from './components/Login';
 import Details from './components/Details';
 import Errror from './components/Errror';
 import {Routes,Route} from "react-router-dom"
+import PrivateRoute from './services/Athontication';
 
 function App() {
   return (
   <>
     <Header />
     <Routes>
-      <Route path='/' element={<Home />} />
+      <Route exact path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/details' element={<Details />} />
+      <Route path='/details' element={<PrivateRoute><Details /></PrivateRoute>} />
       <Route path='*' element={<Errror />} />
     </Routes>
   </>

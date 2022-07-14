@@ -16,7 +16,7 @@ const Details = ({ logout }) => {
 
   return (
     <>
-      {" "}
+      
       {users.map((users) => (
         <div className="row" style={{ background: "rgb(67, 185, 127)" }}>
           <div

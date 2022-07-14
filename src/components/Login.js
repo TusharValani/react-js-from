@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import SIgn_img from "./SIgn_img";
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 const Login = () => {
   const history = useNavigate();
@@ -22,8 +22,8 @@ const Login = () => {
     setInpval({ ...inpval, [name]: value });
   };
   
-  const stateData = useLocation()
-  console.log("stateDataFrom Res",stateData.state);
+  //const stateData = useLocation()
+  //console.log("stateDataFrom Res",stateData.state);
 
  
   
@@ -110,7 +110,7 @@ const Login = () => {
               </span>{" "}
             </p>
           </div>
-          <SIgn_img />
+         <SIgn_img />
         </section>
         <ToastContainer />
       </div>

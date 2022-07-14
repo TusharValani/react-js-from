@@ -17,14 +17,14 @@ const Details = ({ logout }) => {
   return (
     <>
       
-      {users.map((users) => (
-        <div className="row" style={{ background: "rgb(67, 185, 127)" }}>
+      {users.map((users, index) => (
+        <div className="row" style={{ background: "rgb(67, 185, 127)" }} key={index}>
           <div
             className="col-md-6 d-flex align-items-center "
             style={{ background: "rgb(67, 185, 127)" }}
           >
             <div className="ms-4" style={{ background: "rgb(67, 185, 127)" }}>
-              <h5 key={users.id}>Name : {users.name}</h5>
+              <h5>Name : {users.name}</h5>
               <h5>Email : {users.email}</h5>
               <h5>date : {users.date}</h5>
               <h5>password : {users.password}</h5>

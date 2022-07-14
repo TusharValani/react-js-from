@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 
 const Home = React.memo(() => {
-  //console.log("1213414141414254132452325432154321535");
+  
   let navigate = useNavigate();
   const [inpval, setInpval] = useState({
     name: "",
@@ -18,22 +18,10 @@ const Home = React.memo(() => {
     password: "",
   });
 
-  // var data = [];
+  
   const [data, setData] = useState([]);
   localStorage.setItem("useryoutube", JSON.stringify(data)); 
-  // const saveData = () => {
-  // }
-  // console.log("dat123", data);
-
-
-  // data && data.map((item) => {
-  //   console.log("item",item);
-  //   //  localStorage.setItem("useryoutube", JSON.stringify(item));  
-  // })
-
-  // localStorage.setItem("useryoutube", JSON.stringify(data));
-  // useEffect(() => {
-  // }, [data]);
+ 
 
   const getdataChange = (e) => {
     const { value, name } = e.target;
@@ -68,12 +56,11 @@ const Home = React.memo(() => {
     } else {
       console.log("data added succesfully");
       setData([...data, inpval]);
-      // data.push([...data, inpval])
-      // saveData();
+    
       setTimeout(() => {
         navigate("/login", { state: inpval });
       }, 1000);
-      // history("/login");
+      
     }
   };
 

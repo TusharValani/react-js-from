@@ -9,7 +9,7 @@ const Details = ({ logout }) => {
     const users = JSON.parse(localStorage.getItem("useryoutube"));
     if (users) {
       setUsers(users);
-      // console.log(users);
+     
       localStorage.removeItem("token");
     }
   }, []);
@@ -50,23 +50,4 @@ const Details = ({ logout }) => {
 export default Details;
 
 
-// import React from "react";
-// import Button from "react-bootstrap/Button";
-// import { useNavigate } from "react-router-dom";
 
-// const Details = () => {
-//   const history = useNavigate();
-
-//   const uesrlogout = () => {
-//     localStorage.removeItem("token");
-//     history("/login");
-//   };
-
-//   return (
-//     <>
-//       <Button onClick={uesrlogout}>Logout</Button>
-//     </>
-//   );
-// };
-
-// export default Details;

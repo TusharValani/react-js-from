@@ -16,7 +16,7 @@ const Login = () => {
     password: "",
   });
 
-  //console.log(inpval);
+ 
   const getdataChange = (e) => {
     const { value, name } = e.target;
     setInpval({ ...inpval, [name]: value });
@@ -25,9 +25,7 @@ const Login = () => {
   const stateData = useLocation()
   console.log("stateDataFrom Res",stateData.state);
 
-  // useEffect(() => {
-  //   localStorage.setItem("loginData",JSON.stringify(stateData.state))
-  // })
+ 
   
 
   const addData = (e) => {
